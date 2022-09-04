@@ -100,10 +100,12 @@ if uploaded_file is not None:
         st.markdown('Padded CSV')
         st.write(df.head())
 
-
-    with open("20220419_new_orders_to_rpac.json", "r") as f:
-        data_columns = json.load(f)
-        st.write(data_columns[:1])
+   try:
+        with open("20220419_new_orders_to_rpac.json", "r") as f:
+            data_columns = json.load(f)
+            st.write(data_columns[:1])
+    except:
+        pass
         
 else:
     st.write('Please Upload a File')
